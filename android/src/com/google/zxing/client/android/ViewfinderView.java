@@ -30,7 +30,6 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import ti.barcode.RHelper;
 
 /**
@@ -58,6 +57,7 @@ public final class ViewfinderView extends View {
   private int scannerAlpha;
   private List<ResultPoint> possibleResultPoints;
   private List<ResultPoint> lastPossibleResultPoints;
+  private boolean showRectangle = true;
 
   // This constructor is used when the class is built from an XML resource.
   public ViewfinderView(Context context, AttributeSet attrs) {
@@ -89,7 +89,7 @@ public final class ViewfinderView extends View {
     int width = canvas.getWidth();
     int height = canvas.getHeight();
 
-    
+
     if (showRectangle) {
       // Draw the exterior (i.e. outside the framing rect) darkened
       paint.setColor(resultBitmap != null ? resultColor : maskColor);
@@ -197,7 +197,6 @@ public final class ViewfinderView extends View {
     }
   }
 
-  private boolean showRectangle = true;
   public void setShowRectangle(boolean showRectangle) {
     this.showRectangle = showRectangle;
   }
